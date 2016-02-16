@@ -1,0 +1,23 @@
+{
+    "name": "bermanco/bac-timber-classes",
+    "description": "Enhanced and expanded classes for use with Timber",
+    "type": "wordpress-plugin",
+    "repositories": [
+      {
+        "type": "git",
+        "url": "https://github.com/bermanco/posts-2-posts-adapter.git"
+      }
+    ],
+    "require": {
+        "webdevstudios/cmb2": "^2.1",
+        "jarednova/timber": "^0.22.5",
+        "bermanco/posts-2-posts-adapter": "dev-master"
+    },
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Chris Herbert",
+            "email": "herbert@bermanco.com"
+        }
+    ]
+}

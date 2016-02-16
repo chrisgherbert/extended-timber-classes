@@ -1,0 +1,29 @@
+<phpunit
+	bootstrap="tests/bootstrap.php"
+	backupGlobals="false"
+	colors="true"
+	convertErrorsToExceptions="true"
+	convertNoticesToExceptions="true"
+	convertWarningsToExceptions="true"
+	>
+	<testsuites>
+		<testsuite>
+			<directory prefix="test-" suffix=".php">./tests/</directory>
+		</testsuite>
+	</testsuites>
+	<filter>
+		<whitelist>
+			<directory suffix=".php">.</directory>
+			<exclude>
+				<directory suffix=".php">./tests</directory>
+				<directory suffix=".php">./bin</directory>
+				<directory suffix=".php">./setup</directory>
+				<directory suffix=".php">./library</directory>
+				<directory suffix=".php">./wp-content</directory>
+				<directory suffix=".php">./vendor</directory>
+				<file>./bac-timber-classes.php</file>
+				<file>./post-types.php</file>
+			</exclude>
+		</whitelist>
+	</filter>
+</phpunit>
