@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7adc55a7b22dc4f6c400e75b9183285e",
-    "content-hash": "e4a775ef7ad944596b4928f9beab2099",
+    "hash": "2c2e0f4e1050b6a10708cd63929d5181",
+    "content-hash": "4a198381703d5fb701ce96428edc886d",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -231,17 +231,17 @@
             "time": "2016-01-27 12:54:22"
         },
         {
-            "name": "jarednova/timber",
-            "version": "0.22.5",
+            "name": "timber/timber",
+            "version": "1.0-rc2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jarednova/timber.git",
-                "reference": "96e6a228b1b8b03ab55270ba3a2966c26522a01e"
+                "url": "https://github.com/timber/timber.git",
+                "reference": "e5842917b4be25308bff65aac623db5b63c657a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jarednova/timber/zipball/96e6a228b1b8b03ab55270ba3a2966c26522a01e",
-                "reference": "96e6a228b1b8b03ab55270ba3a2966c26522a01e",
+                "url": "https://api.github.com/repos/timber/timber/zipball/e5842917b4be25308bff65aac623db5b63c657a1",
+                "reference": "e5842917b4be25308bff65aac623db5b63c657a1",
                 "shasum": ""
             },
             "require": {
@@ -259,7 +259,7 @@
                 "wp-cli/wp-cli": "*",
                 "wpackagist-plugin/advanced-custom-fields": "4.*"
             },
-            "type": "wordpress-plugin",
+            "type": "library",
             "autoload": {
                 "classmap": [
                     "lib/"
@@ -274,6 +274,11 @@
                     "name": "Jared Novack",
                     "email": "jared@upstatement.com",
                     "homepage": "http://upstatement.com"
+                },
+                {
+                    "name": "Connor J. Burton",
+                    "email": "connorjburton@gmail.com",
+                    "homepage": "http://connorburton.com"
                 }
             ],
             "description": "Plugin to write WordPress themes w Object-Oriented Code and the Twig Template Engine",
@@ -284,7 +289,7 @@
                 "timber",
                 "twig"
             ],
-            "time": "2016-01-18 18:00:17"
+            "time": "2016-03-22 12:51:53"
         },
         {
             "name": "twig/twig",
@@ -397,57 +402,13 @@
                 "routing"
             ],
             "time": "2015-03-07 13:41:29"
-        },
-        {
-            "name": "webdevstudios/cmb2",
-            "version": "v2.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/WebDevStudios/CMB2.git",
-                "reference": "b3b78a569f63560d2f8a039c4c1ff412a28f0156"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/WebDevStudios/CMB2/zipball/b3b78a569f63560d2f8a039c4c1ff412a28f0156",
-                "reference": "b3b78a569f63560d2f8a039c4c1ff412a28f0156",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">5.2.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
-            },
-            "suggest": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "WebDevStudios",
-                    "email": "contact@webdevstudios.com",
-                    "homepage": "https://github.com/WebDevStudios",
-                    "role": "Developer"
-                }
-            ],
-            "description": "CMB2 is a metabox, custom fields, and forms library for WordPress that will blow your mind.",
-            "homepage": "https://github.com/WebDevStudios/CMB2",
-            "keywords": [
-                "metabox",
-                "plugin",
-                "wordpress"
-            ],
-            "time": "2015-10-01 12:58:23"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "timber/timber": 5,
         "bermanco/posts-2-posts-adapter": 20
     },
     "prefer-stable": false,

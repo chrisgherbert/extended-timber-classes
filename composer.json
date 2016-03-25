@@ -8,8 +8,7 @@
       }
     ],
     "require": {
-        "webdevstudios/cmb2": "^2.1",
-        "jarednova/timber": "^0.22.5",
+        "timber/timber": "1.0-rc2",
         "bermanco/posts-2-posts-adapter": "dev-master"
     },
     "license": "GPLv2",
@@ -18,5 +17,10 @@
             "name": "Chris Herbert",
             "email": "herbert@bermanco.com"
         }
-    ]
+    ],
+    "autoload": {
+        "classmap": [
+            "classes/BasePost.php"
+        ]
+    }
 }
