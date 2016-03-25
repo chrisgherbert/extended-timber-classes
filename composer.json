@@ -8,8 +8,8 @@
       }
     ],
     "require": {
-        "timber/timber": "dev-master",
-        "bermanco/posts-2-posts-adapter": "dev-master"
+        "bermanco/posts-2-posts-adapter": "dev-master",
+        "timber/timber": "dev-master"
     },
     "license": "GPLv2",
     "authors": [

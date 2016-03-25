@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2c2e0f4e1050b6a10708cd63929d5181",
-    "content-hash": "4a198381703d5fb701ce96428edc886d",
+    "hash": "c344bd82ad7c5ddbb4468bddfdbc579f",
+    "content-hash": "6ea43af1e65ea33193a06e04cf654e65",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -232,7 +232,7 @@
         },
         {
             "name": "timber/timber",
-            "version": "1.0-rc2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/timber/timber.git",
@@ -408,8 +408,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "timber/timber": 5,
-        "bermanco/posts-2-posts-adapter": 20
+        "bermanco/posts-2-posts-adapter": 20,
+        "timber/timber": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
