@@ -1,7 +1,6 @@
 {
     "name": "bermanco/bac-timber-classes",
     "description": "Enhanced and expanded classes for use with Timber",
-    "type": "wordpress-plugin",
     "repositories": [
       {
         "type": "git",
