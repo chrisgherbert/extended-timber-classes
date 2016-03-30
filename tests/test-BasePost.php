@@ -248,6 +248,39 @@ class BasePostTest extends WP_UnitTestCase {
 		);
 
 	}
+
+	/**
+	 * @dataProvider get_post_type_label_provider
+	 */
+	public function test_get_post_type_label($expected_value, array $post_type_def, $label){
+
+		register_post_type('test-post-type', $post_type_def);
+
+		$post_id = $this->factory->post->create(array('post_type' => 'test-post-type'));
+
+		$post_obj = new BasePost($post_id);
+
+		$this->assertEquals($expected_value, $post_obj->get_post_type_label($label));
+
+	}
+
+	public function get_post_type_label_provider(){
+
+		$video_def = array(
+			'labels' => array(
+				'name' => 'Videos',
+				'singular_name' => 'Video',
+				'menu_name' => 'Menu Name'
+			)
+		);
+
+		return array(
+			array('Video', $video_def, 'singular_name'),
+			array('Menu Name', $video_def, 'menu_name')
+		);
+
+	}
+
 	///////////////
 	// Protected //
 	///////////////
