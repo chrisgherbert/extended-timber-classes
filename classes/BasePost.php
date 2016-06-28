@@ -92,7 +92,7 @@ class BasePost extends TimberPost {
 		$tags = $this->get_terms('tag');
 
 		if ($tags){
-			return $this->create_posts_links_string($tags);
+			return $this->create_terms_links_string($tags);
 		}
 
 	}
@@ -106,7 +106,7 @@ class BasePost extends TimberPost {
 		$categories = $this->get_terms('category');
 
 		if ($categories){
-			return $this->create_posts_links_string($categories);
+			return $this->create_terms_links_string($categories);
 		}
 
 	}
