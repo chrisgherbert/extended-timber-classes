@@ -1,6 +1,7 @@
 <?php
 
 use bermanco\Posts2PostsAdapter\Posts2PostsAdapter;
+use bermanco\TimberClasses\Tools;
 
 class BasePost extends TimberPost {
 
@@ -92,7 +93,7 @@ class BasePost extends TimberPost {
 		$tags = $this->get_terms('tag');
 
 		if ($tags){
-			return $this->create_posts_links_string($tags);
+			return $this->create_terms_links_string($tags);
 		}
 
 	}
@@ -106,7 +107,7 @@ class BasePost extends TimberPost {
 		$categories = $this->get_terms('category');
 
 		if ($categories){
-			return $this->create_posts_links_string($categories);
+			return $this->create_terms_links_string($categories);
 		}
 
 	}
@@ -378,6 +379,11 @@ class BasePost extends TimberPost {
 			return wp_get_attachment_url($meta_data);
 		}
 
+	}
+
+	protected function get_attachment_file_size($attachment_id){
+		$file_path = get_attached_file($attachment_id);
+		return \bermanco\TimberClasses\Tools::get_file_size($file_path);
 	}
 
 	/////////////
