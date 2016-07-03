@@ -1,6 +1,5 @@
 <?php
 
-use bermanco\Posts2PostsAdapter\Posts2PostsAdapter;
 use bermanco\TimberClasses\Tools;
 
 class BasePost extends TimberPost {
