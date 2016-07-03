@@ -12,9 +12,10 @@
         "timber/timber": "~1"
     },
     "autoload": {
-        "classmap": [
-            "classes/",
-            "classes/opengraph/"
+        "files": [
+            "classes/Tools.php",
+            "classes/BasePost.php",
+            "classes/opengraph/Base.php"
         ]
     }
 }
