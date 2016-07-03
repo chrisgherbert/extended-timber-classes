@@ -9,24 +9,6 @@ class BasePost extends TimberPost {
 	public $disable_robots = false;
 	public $custom_field_prefix = '';
 
-	protected $p2p_adapter;
-
-	public function __construct(
-		$pid = null,
-		Posts2PostsAdapter $p2p_adapter = null
-	) {
-
-		parent::__construct($pid);
-
-		if ($p2p_adapter){
-			$this->p2p_adapter = $p2p_adapter;
-		}
-		else {
-			$this->p2p_adapter = Posts2PostsAdapter::create();
-		}
-
-	}
-
 	/**
 	 * Gets the label of a post type, if it is defined.
 	 * @param  string $label Post type slug
@@ -385,61 +367,5 @@ class BasePost extends TimberPost {
 		$file_path = get_attached_file($attachment_id);
 		return \bermanco\TimberClasses\Tools::get_file_size($file_path);
 	}
-
-	/////////////
-	// Aliases //
-	/////////////
-
-	// @codeCoverageIgnoreStart
-
-	function post_type_label($label){
-		$this->get_post_type_label($label);
-	}
-
-	function large_thumbnail(){
-		$this->has_large_thumbnail();
-	}
-
-	function first_content_image(){
-		$this->get_first_content_image();
-	}
-
-	function tags_links_string(){
-		$this->get_tags_links_string();
-	}
-
-	function categories_links_string(){
-		$this->get_categories_links_string();
-	}
-
-	function php_class(){
-		$this->get_php_class();
-	}
-
-	function facebook_share_url(){
-		$this->get_facebook_share_url();
-	}
-
-	function twitter_tweet_url($handle = ''){
-		$this->get_twitter_tweet_url($handle = '');
-	}
-
-	function mailto_url(){
-		$this->get_mailto_url();
-	}
-
-	function rss_title(){
-		$this->get_rss_title();
-	}
-
-	function rss_content(){
-		$this->get_rss_content();
-	}
-
-	function cmb2_meta($id){
-		$this->get_cmb2_meta($id);
-	}
-
-	// @codeCoverageIgnoreEnd
 
 }
