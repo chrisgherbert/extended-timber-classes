@@ -2,30 +2,11 @@
 
 use bermanco\TimberClasses\Tools;
 
-class BasePost extends TimberPost {
+class BasePost extends \Timber\Post {
 
 	public $PostClass = 'BasePost';
 	public $disable_robots = false;
 	public $custom_field_prefix = '';
-
-	/**
-	 * Gets the label of a post type, if it is defined.
-	 * @param  string $label Post type slug
-	 * @return string        The desired post type label
-	 */
-	public function get_post_type_label($label){
-
-		$post_type_obj = get_post_type_object($this->post_type);
-
-		if ($post_type_obj){
-
-			if (isset($post_type_obj->labels->{$label})){
-				return $post_type_obj->labels->{$label};
-			}
-
-		}
-
-	}
 
 	/**
 	 * Check if the image is large enough to be expanded to fill a content
