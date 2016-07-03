@@ -145,6 +145,15 @@ class BasePost extends TimberPost {
 		return sprintf($format, $subject, $body);
 	}
 
+	////////////////
+	// Open Graph //
+	////////////////
+
+	public function get_open_graph_data(){
+		$open_graph = new \bermanco\opengraph\Base($this);
+		return $open_graph->get_data();
+	}
+
 	/////////
 	// RSS //
 	/////////
