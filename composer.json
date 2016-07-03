@@ -19,7 +19,7 @@
     ],
     "autoload": {
         "classmap": [
-            "classes/BasePost.php"
+            "classes/"
         ]
     }
 }
