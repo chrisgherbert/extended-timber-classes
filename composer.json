@@ -8,6 +8,9 @@
             "email": "herbert@bermanco.com"
         }
     ],
+    "require": {
+        "timber/timber": "~1"
+    },
     "autoload": {
         "classmap": [
             "classes/"
