@@ -1,15 +1,6 @@
 {
     "name": "bermanco/bac-timber-classes",
     "description": "Enhanced and expanded classes for use with Timber",
-    "repositories": [
-      {
-        "type": "git",
-        "url": "https://github.com/bermanco/posts-2-posts-adapter.git"
-      }
-    ],
-    "require": {
-        "bermanco/posts-2-posts-adapter": "1.0"
-    },
     "license": "GPLv2",
     "authors": [
         {
