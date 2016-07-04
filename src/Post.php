@@ -1,8 +1,8 @@
 <?php
 
-use bermanco\TimberClasses\Tools;
+namespace bermanco\TimberClasses;
 
-class BasePost extends \Timber\Post {
+class Post extends \Timber\Post {
 
 	public $PostClass = 'BasePost';
 	public $disable_robots = false;
@@ -131,7 +131,7 @@ class BasePost extends \Timber\Post {
 	////////////////
 
 	public function get_open_graph_data(){
-		$open_graph = new \bermanco\opengraph\Base($this);
+		$open_graph = new OpenGraph\Base($this);
 		return $open_graph->get_data();
 	}
 
@@ -331,7 +331,7 @@ class BasePost extends \Timber\Post {
 		$meta_data = $this->get_cmb2_meta($id);
 
 		if ($meta_data){
-			$file_obj = new TimberImage($meta_data);
+			$file_obj = new \Timber\Image($meta_data);
 			return $file_obj;
 		}
 
@@ -354,7 +354,7 @@ class BasePost extends \Timber\Post {
 
 	protected function get_attachment_file_size($attachment_id){
 		$file_path = get_attached_file($attachment_id);
-		return \bermanco\TimberClasses\Tools::get_file_size($file_path);
+		return Tools\Tools::get_file_size($file_path);
 	}
 
 }

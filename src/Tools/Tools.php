@@ -1,6 +1,6 @@
 <?php
 
-namespace bermanco\TimberClasses;
+namespace bermanco\ExtendedTimberClasses\Tools;
 
 class Tools {
 

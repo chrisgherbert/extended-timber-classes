@@ -6,16 +6,18 @@
         {
             "name": "Chris Herbert",
             "email": "herbert@bermanco.com"
+        },
+        {
+            "name": "Joey Nichols",
+            "email": "nichols@bermanco.com"
         }
     ],
     "require": {
         "timber/timber": "~1"
     },
     "autoload": {
-        "files": [
-            "classes/Tools.php",
-            "classes/BasePost.php",
-            "classes/opengraph/Base.php"
-        ]
+        "psr-4": {
+            "ExtendedTimberClasses": "src"
+        }
     }
 }
