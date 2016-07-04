@@ -8,22 +8,26 @@ class Post extends \Timber\Post {
 	public $disable_robots = false;
 	public $custom_field_prefix = '';
 
-	/**
-	 * Check if the image is large enough to be expanded to fill a content
-	 * container (at least 500px wide)
-	 * @return boolean True if the image is at least 500px wide
-	 */
-	public function has_large_thumbnail(){
+	public function thumbnail_wider_than($pixel_width){
 
 		$thumbnail = $this->get_thumbnail();
 
-		if ($thumbnail && $thumbnail->width() > 499){
+		if ($thumbnail && $thumbnail->width() > $pixel_width){
 			return true;
 		}
 		else {
 			return false;
 		}
 
+	}
+
+	/**
+	 * Check if the image is large enough to be expanded to fill a content
+	 * container (at least 500px wide)
+	 * @return boolean True if the image is at least 500px wide
+	 */
+	public function has_large_thumbnail(){
+		return $this->thumbnail_wider_than(500);
 	}
 
 	/**
