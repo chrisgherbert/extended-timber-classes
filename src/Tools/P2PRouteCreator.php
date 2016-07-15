@@ -31,7 +31,7 @@ class P2PRouteCreator {
 
 		$route_string = $this->containing_post_type . "/:name/" . $this->contained_post_type;
 
-		Route::map($route_string, function($params){
+		\Routes::map($route_string, function($params){
 
 			$posts = get_posts(array(
 				'name' => $params['name'],
@@ -54,13 +54,13 @@ class P2PRouteCreator {
 				'archive_title' => $this->get_archive_title_string($wp_post, $this->contained_post_type)
 			);
 
-			Routes::load($this->template, $params, $query, 200);
+			\Routes::load($this->template, $params, $query, 200);
 
 		});
 
 		$paginated_route_string = $this->containing_post_type . "/:name/" . $this->contained_post_type . "/page/:pg";
 
-		Route::map($paginated_route_string, function($params){
+		\Routes::map($paginated_route_string, function($params){
 
 			$posts = get_posts(array(
 				'name' => $params['name'],
@@ -84,7 +84,7 @@ class P2PRouteCreator {
 
 			}
 
-			Routes::load($this->template, $params, $query, 200);
+			\Routes::load($this->template, $params, $query, 200);
 
 		});
 
