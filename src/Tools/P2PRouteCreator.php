@@ -92,17 +92,19 @@ class P2PRouteCreator {
 
 	public function get_archive_title_string($containing_post, $contained_post_type){
 
-		$containing_title = apply_filters('the_title', $containing_post->post_title);
+		$title_string = "Archives";
+
+		if (isset($containing_post->post_title)){
+			$title_string .= ": " . apply_filters('the_title', $containing_post->post_title);
+		}
 
 		$post_type_obj = get_post_type_object($contained_post_type);
 
-		$contained_post_type_plural = $post_type_obj->labels->name;
-
-		if ($containing_title && $contained_post_type_plural){
-
-			return "Archives: $containing_title / $contained_post_type_plural";
-
+		if (isset($post_type_obj->labels)){
+			$title_string .= " / " . $post_type_obj->labels->name;
 		}
+
+		return $title_string;
 
 	}
 
