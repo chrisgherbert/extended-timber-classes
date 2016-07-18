@@ -145,9 +145,9 @@ class Base {
 
 			$logo_schema_item['@type'] = 'ImageObject';
 
-			if ($logo_obj->get_src()){
-				$logo_schema_item['contentUrl'] = $logo_obj->get_src();
-				$logo_schema_item['url'] = $logo_obj->get_src();
+			if ($logo_obj->src()){
+				$logo_schema_item['contentUrl'] = $logo_obj->src();
+				$logo_schema_item['url'] = $logo_obj->src();
 			}
 
 			if ($logo_obj->width){
