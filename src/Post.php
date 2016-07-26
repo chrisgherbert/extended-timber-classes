@@ -4,7 +4,7 @@ namespace bermanco\ExtendedTimberClasses;
 
 class Post extends \Timber\Post {
 
-	public $PostClass = 'BasePost';
+	public $PostClass = '\bermanco\ExtendedTimberClasses\Post';
 	public $disable_robots = false;
 	public $custom_field_prefix = '';
 
