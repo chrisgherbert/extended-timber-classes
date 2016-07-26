@@ -8,22 +8,6 @@ class Term extends \Timber\Term {
 	public $TermClass = '\bermanco\ExtendedTimberClasses\Term';
 	public $custom_field_prefix;
 
-	public function get_cmb2_meta($key){
-		$full_key = $this->custom_field_prefix . $key;
-		return get_term_meta($this->ID, $full_key, true);
-	}
-
-	public function get_cmb2_image($key){
-
-		$id = $this->get_cmb2_meta($key);
-
-		if ($id){
-			$file_obj = new \Timber\Image($id);
-			return $file_obj;
-		}
-
-	}
-
 	//////////
 	// CMB2 //
 	//////////
