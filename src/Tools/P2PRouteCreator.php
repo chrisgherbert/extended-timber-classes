@@ -50,8 +50,11 @@ class P2PRouteCreator {
 
 			}
 
-			$params = array(
-				'archive_title' => $this->get_archive_title_string($wp_post, $this->contained_post_type)
+			$params += array(
+				'archive_title' => $this->get_archive_title_string($wp_post, $this->contained_post_type),
+				'containing_post_type' => $this->containing_post_type,
+				'contained_post_type' => $this->contained_post_type,
+				'p2p_connection_type' => $this->p2p_connection_type
 			);
 
 			\Routes::load($this->template, $params, $query, 200);
@@ -79,7 +82,10 @@ class P2PRouteCreator {
 				);
 
 				$params += array(
-					'archive_title' => $this->get_archive_title_string($wp_post, $this->contained_post_type)
+					'archive_title' => $this->get_archive_title_string($wp_post, $this->contained_post_type),
+					'containing_post_type' => $this->containing_post_type,
+					'contained_post_type' => $this->contained_post_type,
+					'p2p_connection_type' => $this->p2p_connection_type,
 				);
 
 			}
