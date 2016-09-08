@@ -106,7 +106,7 @@ class Post extends \Timber\Post {
 
 		$url_params = array();
 
-		$url_params['text'] = $this->get_title();
+		$url_params['text'] = $this->post_title;
 		$url_params['url'] = $this->get_link();
 
 		if ($handle){
@@ -125,7 +125,7 @@ class Post extends \Timber\Post {
 	 */
 	public function get_mailto_url(){
 		$format = 'mailto:?subject=%s&body=%s';
-		$subject = rawurlencode($this->get_title());
+		$subject = rawurlencode($this->post_title);
 		$body = rawurlencode('Check it out: ' . $this->get_link());
 		return sprintf($format, $subject, $body);
 	}
