@@ -11,6 +11,10 @@ class Base {
 	public function __construct(\TimberPost $post){
 		$this->post = $post;
 	}
+	
+	public function set_type($type){
+		$this->type = $type;
+	}
 
 	public function set_logo_url($logo_url){
 		$this->logo_url = $logo_url;
