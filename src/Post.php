@@ -211,9 +211,63 @@ class Post extends \Timber\Post {
 
 	}
 
+	//////////////////////////////
+	// Facebook Shares/Comments //
+	//////////////////////////////
+
+	/**
+	 * Get Facebook share count for page's URL.
+	 * @return int|null Number of shares
+	 */
+	public function get_facebook_share_count(){
+
+		$data = $this->get_facebook_data();
+
+		if ($data && isset($data->share->share_count)){
+			return $data->share->share_count;
+		}
+
+	}
+
+	/**
+	 * Get Facebook comment count for page's URL.
+	 * @return int|null Number of comments
+	 */
+	public function get_facebook_comment_count(){
+
+		$data = $this->get_facebook_data();
+
+		if ($data && isset($data->share->comment_count)){
+			return $data->share->comment_count;
+		}
+
+	}
+
 	///////////////
 	// Protected //
 	///////////////
+
+	/**
+	 * Get basic data (shares, comments, etc) on the page from Facebook. This
+	 * is not an authenticated call, so the method may not work for long.
+	 * @return stdClass  Object of Facebook data
+	 */
+	protected function get_facebook_data(){
+
+		if (isset($this->facebook_data)){
+			return $this->facebook_data;
+		}
+
+		$request_url = "http://graph.facebook.com/?id=" . $this->get_link();
+
+		$json = file_get_contents($request_url);
+
+		if ($json){
+			$this->facebook_data = json_decode($json);
+			return $this->facebook_data;
+		}
+
+	}
 
 	/**
 	 * Create a comma-separated list of post links
