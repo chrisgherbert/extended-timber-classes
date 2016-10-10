@@ -80,7 +80,7 @@ class FacebookPopularPosts {
 			)
 		);
 
-		$posts = Timber::get_posts($query_args);
+		$posts = Timber::get_posts($query_args, 'bermanco\ExtendedTimberClasses\Post');
 
 		return $posts;
 
