@@ -11,6 +11,7 @@ class Base {
 	protected $player_width;
 	protected $player_height;
 	protected $image_url;
+	protected $fallback_image_url;
 
 	/////////////
 	// Setters //
@@ -67,11 +68,21 @@ class Base {
 
 	/**
 	 * Required for player card
-	 * @param string $url URL of fallback image
+	 * @param string $url
 	 */
 	public function set_image_url($url){
 		if (filter_var($url, FILTER_VALIDATE_URL) !== false){
 			$this->image_url = $url;
+		}
+	}
+
+	/**
+	 * Set a fallback image URL
+	 * @param string $url
+	 */
+	public function set_fallback_image_url($url){
+		if (filter_var($url, FILTER_VALIDATE_URL) !== false){
+			$this->fallback_image_url = $url;
 		}
 	}
 
@@ -111,6 +122,12 @@ class Base {
 			return array(
 				'key' => 'twitter:image',
 				'value' => $this->image_url
+			);
+		}
+		else if ($this->fallback_image_url){
+			return array(
+				'key' => 'twitter:image',
+				'value' => $this->fallback_image_url
 			);
 		}
 	}
@@ -192,6 +209,9 @@ class Base {
 			foreach ($this->get_player_tags() as $tag) {
 				$parts[] = $tag;
 			}
+		}
+		else if ($this->get_image_url()){
+			$parts[] = $this->get_image_url();
 		}
 
 		return $parts;
