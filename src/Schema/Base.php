@@ -90,14 +90,9 @@ class Base {
 
 	protected function get_image(){
 
-		if ($this->post->get_thumbnail()){
+		if ($image_src = $this->post->thumbnail->src()){
 
-			$id = get_post_thumbnail_id($this->post->ID);
-			$url = wp_get_attachment_url($id);
-
-			if ($url){
-				return $url;
-			}
+			return $image_src;
 
 		}
 
@@ -107,13 +102,7 @@ class Base {
 
 		if ($this->get_image()){
 
-			$id = get_post_thumbnail_id($this->post->ID);
-
-			$meta = wp_get_attachment_metadata($id);
-
-			if (isset($meta['height'])){
-				return $meta['height'];
-			}
+			return $this->post->thumbnail->height();
 
 		}
 
@@ -123,13 +112,7 @@ class Base {
 
 		if ($this->get_image()){
 
-			$id = get_post_thumbnail_id($this->post->ID);
-
-			$meta = wp_get_attachment_metadata($id);
-
-			if (isset($meta['width'])){
-				return $meta['width'];
-			}
+			return $this->post->thumbnail->width();
 
 		}
 
