@@ -106,9 +106,9 @@ class Base {
 
 	protected function get_image(){
 
-		if ($image_src = $this->post->thumbnail->src()){
+		if ($this->post->thumbnail()){
 
-			return $image_src;
+			return $this->post->thumbnail->src();
 
 		}
 
