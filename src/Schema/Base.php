@@ -80,6 +80,22 @@ class Base {
 		return $this->post->get_link();
 	}
 
+	protected function get_date_published(){
+		return $this->post->get_date("Y-m-d\TH:i:s0"); // ISO 8601 date format
+	}
+
+	protected function get_date_modified(){
+
+		$time = strtotime($this->post->post_modified);
+
+		if ($time){
+			return date("Y-m-d\TH:i:s0", $time);
+		}
+		else {
+			return $this->get_date_published();
+		}
+	}
+
 	protected function get_description(){
 
 		$content = $this->post->get_preview(30, false, '', true);
