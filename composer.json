@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "timber/timber": "~1"
+        "timber/timber": "1.2.4"
     },
     "autoload": {
         "psr-4": {
