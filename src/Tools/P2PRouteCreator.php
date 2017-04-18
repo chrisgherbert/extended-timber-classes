@@ -97,6 +97,10 @@ class P2PRouteCreator {
 	}
 
 	public function get_archive_title_string($containing_post, $contained_post_type){
+		
+		if ($this->title){
+			return $this->title;
+		}
 
 		$title_string = "Archives";
 
