@@ -130,6 +130,75 @@ class Post extends \Timber\Post {
 		return sprintf($format, $subject, $body);
 	}
 
+	/**
+	 * Get Reddit share URL
+	 * @return string Reddit share URL
+	 */
+	public function get_reddit_share_url(){
+
+		$base_url = 'https://reddit.com/submit';
+
+		$params = array(
+			'url' => $this->link(),
+			'title' => $this->post_title
+		);
+
+		return $base_url . '?' . http_build_query($params);
+
+	}
+
+	/**
+	 * Get Tumblr share URL
+	 * @return string Tumblr share URL
+	 */
+	public function get_tumblr_share_url(){
+
+		$base_url = 'http://www.tumblr.com/share/link';
+
+		$params = array(
+			'url' => $this->link(),
+			'name' => $this->post_title,
+			'posttype' => 'link'
+		);
+
+		if ($this->get_preview()){
+			$params['description'] = $this->get_preview();
+		}
+
+		return $base_url . '?' . http_build_query($params);
+
+	}
+
+	/**
+	 * Get Pinterest share link - requires a featured image
+	 * @return string Pinterest share URL
+	 */
+	public function get_pinterest_share_url(){
+
+		if (!$this->thumbnail()){
+			return false;
+		}
+
+		return $this->create_pinterest_share_url($this->thumbnail()->src('large'), $this->link(), $this->post_title);
+
+	}
+
+	protected function create_pinterest_share_url($image_url, $source_url, $description){
+
+		$image_url = $this->thumbnail()->src('full');
+
+		$base_url = 'https://pinterest.com/pin/create/button';
+
+		$params = array(
+			'media' => $image_url,
+			'url' => $source_url,
+			'description' => $description
+		);
+
+		return $base_url . '?' . http_build_query($params);
+
+	}
+
 	////////////////
 	// Open Graph //
 	////////////////
