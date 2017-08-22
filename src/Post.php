@@ -139,6 +139,15 @@ class Post extends \Timber\Post {
 		return $open_graph->get_data();
 	}
 
+	////////////
+	// Schema //
+	////////////
+
+	public function get_schema_data(){
+		$schema = new Schema\Base($this);
+		return $schema->get_json_ld_code();
+	}
+
 	/////////
 	// RSS //
 	/////////
