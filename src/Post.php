@@ -68,9 +68,21 @@ class Post extends \Timber\Post {
 	 * Get a string with comma-separated list of the post's category names
 	 * @return string Category names list
 	 */
-	public function get_categories_links_string(){
+	public function get_categories_links_string($exclude_uncategorized = true){
 
 		$categories = $this->get_terms('category');
+
+		if ($exclude_uncategorized){
+
+			foreach ($categories as $key => $category){
+
+				if ($category->name == 'Uncategorized'){
+					unset($categories[$key]);
+				}
+
+			}
+
+		}
 
 		if ($categories){
 			return $this->create_terms_links_string($categories);
