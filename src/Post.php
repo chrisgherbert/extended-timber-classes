@@ -132,6 +132,30 @@ class Post extends \Timber\Post {
 	}
 
 	/**
+	 * Get LinkedIn Share URL
+	 * @return string LinkedIn Share URL
+	 */
+	public function get_linkedin_share_url($source = ''){
+
+		$base_url = 'https://www.linkedin.com/shareArticle';
+
+		$params = [
+			'mini' => 'true',
+			'url' => $this->link(),
+			'title' => $this->title()
+		];
+
+		if ($source){
+			$params['source'] = $source;
+		}
+
+		$query_string = http_build_query($params);
+
+		return $base_url . '?' . $query_string;
+
+	}
+
+	/**
 	 * Get mailto link
 	 * @return string The mailto link
 	 */
