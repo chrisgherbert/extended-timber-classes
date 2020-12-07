@@ -1,15 +1,11 @@
 {
-    "name": "bermanco/bac-timber-classes",
+    "name": "chrisgherbert/extended-timber-classes",
     "description": "Enhanced and expanded classes for use with Timber",
     "license": "GPLv2",
     "authors": [
         {
             "name": "Chris Herbert",
-            "email": "herbert@bermanco.com"
-        },
-        {
-            "name": "Joey Nichols",
-            "email": "nichols@bermanco.com"
+            "email": "chris@chrisgherbert.com"
         }
     ],
     "require": {
