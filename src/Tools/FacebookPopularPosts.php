@@ -1,7 +1,7 @@
 <?php
 
-namespace bermanco\ExtendedTimberClasses\Tools;
-use bermanco\ExtendedTimberClasses\Post;
+namespace chrisgherbert\ExtendedTimberClasses\Tools;
+use chrisgherbert\ExtendedTimberClasses\Post;
 use Timber\Timber;
 
 class FacebookPopularPosts {
@@ -80,7 +80,7 @@ class FacebookPopularPosts {
 			)
 		);
 
-		$posts = Timber::get_posts($query_args, 'bermanco\ExtendedTimberClasses\Post');
+		$posts = Timber::get_posts($query_args, 'chrisgherbert\ExtendedTimberClasses\Post');
 
 		return $posts;
 

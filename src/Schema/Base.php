@@ -1,6 +1,6 @@
 <?php
 
-namespace bermanco\ExtendedTimberClasses\Schema;
+namespace chrisgherbert\ExtendedTimberClasses\Schema;
 
 class Base {
 

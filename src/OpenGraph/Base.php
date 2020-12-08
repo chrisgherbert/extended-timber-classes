@@ -1,6 +1,6 @@
 <?php 
 
-namespace bermanco\ExtendedTimberClasses\OpenGraph;
+namespace chrisgherbert\ExtendedTimberClasses\OpenGraph;
 
 class Base {
 

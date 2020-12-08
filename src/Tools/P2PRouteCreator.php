@@ -1,6 +1,6 @@
 <?php
 
-namespace bermanco\ExtendedTimberClasses\Tools;
+namespace chrisgherbert\ExtendedTimberClasses\Tools;
 
 class P2PRouteCreator {
 

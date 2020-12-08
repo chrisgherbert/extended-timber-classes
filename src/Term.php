@@ -1,11 +1,11 @@
 <?php
 
-namespace bermanco\ExtendedTimberClasses;
+namespace chrisgherbert\ExtendedTimberClasses;
 
 class Term extends \Timber\Term {
 
-	public $PostClass = '\bermanco\ExtendedTimberClasses\Post';
-	public $TermClass = '\bermanco\ExtendedTimberClasses\Term';
+	public $PostClass = '\chrisgherbert\ExtendedTimberClasses\Post';
+	public $TermClass = '\chrisgherbert\ExtendedTimberClasses\Term';
 	public $custom_field_prefix;
 
 	//////////

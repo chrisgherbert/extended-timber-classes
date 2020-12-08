@@ -1,6 +1,6 @@
 <?php
 
-namespace bermanco\ExtendedTimberClasses\TwitterCard;
+namespace chrisgherbert\ExtendedTimberClasses\TwitterCard;
 
 class Base {
 
