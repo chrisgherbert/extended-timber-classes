@@ -99,12 +99,22 @@ class Post extends \Timber\Post {
 	}
 
 	/**
+	 * Get URL to be used for share links. This is here to make it easy to 
+	 * override, in cases where the share URL isn't necessarily the post's 
+	 * standard URL.
+	 * @return string URL to use for share links
+	 */
+	public function share_url(){
+		return $this->get_link();
+	}
+
+	/**
 	 * Get Facebook Share URL
 	 * @return string Facebook Share URL
 	 */
 	public function get_facebook_share_url(){
 		$base = 'https://www.facebook.com/sharer/sharer.php?u=';
-		$url = rawurlencode($this->get_link());
+		$url = rawurlencode($this->share_url());
 		return $base . $url;
 	}
 
@@ -119,7 +129,7 @@ class Post extends \Timber\Post {
 		$url_params = array();
 
 		$url_params['text'] = $this->post_title;
-		$url_params['url'] = $this->get_link();
+		$url_params['url'] = $this->share_url();
 
 		if ($handle){
 			$url_params['via'] = $handle;
@@ -141,7 +151,7 @@ class Post extends \Timber\Post {
 
 		$params = [
 			'mini' => 'true',
-			'url' => $this->link(),
+			'url' => $this->share_url(),
 			'title' => $this->title()
 		];
 
@@ -162,7 +172,7 @@ class Post extends \Timber\Post {
 	public function get_mailto_url(){
 		$format = 'mailto:?subject=%s&body=%s';
 		$subject = rawurlencode($this->post_title);
-		$body = rawurlencode('Check it out: ' . $this->get_link());
+		$body = rawurlencode('Check it out: ' . $this->share_url());
 		return sprintf($format, $subject, $body);
 	}
 
@@ -175,7 +185,7 @@ class Post extends \Timber\Post {
 		$base_url = 'https://reddit.com/submit';
 
 		$params = array(
-			'url' => $this->link(),
+			'url' => $this->share_url(),
 			'title' => $this->post_title
 		);
 
@@ -192,7 +202,7 @@ class Post extends \Timber\Post {
 		$base_url = 'http://www.tumblr.com/share/link';
 
 		$params = array(
-			'url' => $this->link(),
+			'url' => $this->share_url(),
 			'name' => $this->post_title,
 			'posttype' => 'link'
 		);
@@ -215,7 +225,7 @@ class Post extends \Timber\Post {
 			return false;
 		}
 
-		return $this->create_pinterest_share_url($this->thumbnail()->src('large'), $this->link(), $this->post_title);
+		return $this->create_pinterest_share_url($this->thumbnail()->src('large'), $this->share_url(), $this->post_title);
 
 	}
 
