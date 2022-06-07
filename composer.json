@@ -9,11 +9,16 @@
         }
     ],
     "require": {
-        "timber/timber": "1.18.2"
+        "timber/timber": "1.19.2"
     },
     "autoload": {
         "psr-4": {
             "chrisgherbert\\ExtendedTimberClasses\\": "src"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
         }
     }
 }
