@@ -147,7 +147,7 @@ class Post extends \Timber\Post {
 	 */
 	public function get_linkedin_share_url($source = ''){
 
-		$base_url = 'https://www.linkedin.com/shareArticle';
+		$base_url = 'https://www.linkedin.com/sharing/share-offsite';
 
 		$params = [
 			'mini' => 'true',
