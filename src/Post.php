@@ -122,7 +122,7 @@ class Post extends \Timber\Post {
 	 * Get Twitter Tweet URL
 	 * @return string Twitter Tweet URL
 	 */
-	public function get_twitter_tweet_url($handle = ''){
+	public function get_twitter_share_url($handle = ''){
 
 		$format = 'https://twitter.com/intent/tweet?text=%s&url=%s&via=%s';
 
@@ -139,6 +139,13 @@ class Post extends \Timber\Post {
 
 		return "https://twitter.com/intent/tweet?$query_string";
 
+	}
+
+	/**
+	 * To maintain compatibility on older site
+	 */
+	public function get_twitter_tweet_url($handle = ''){
+		return this->get_twitter_share_url($handle);
 	}
 
 	/**
@@ -212,6 +219,28 @@ class Post extends \Timber\Post {
 		}
 
 		return $base_url . '?' . http_build_query($params);
+
+	}
+
+	public function get_threads_share_url(){
+		$base = 'https://www.threads.net/intent/post';
+
+		$params = [
+			'text' => $this->title() . ' ' . $this->link()
+		];
+
+		return $base . '?' . http_build_query($params);
+	}
+
+	public function get_bluesky_share_url(){
+
+		$base = 'https://bsky.app/intent/compose';
+
+		$params = [
+			'text' => $this->title() . ' ' . $this->link()
+		];
+
+		return $base . '?' . http_build_query($params);
 
 	}
 
